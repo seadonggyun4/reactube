@@ -1,0 +1,13 @@
+@layer components {
+  .searchHeaderHide {
+    transform: translate3d(0, -100px,0);
+    transition: .5s ease-in-out;
+    @apply flexCenter p-4 w-full border-b-2 border-zinc-600;
+  }
+
+  .searchHeaderShow {
+    transform: translate3d(0, 0,0);
+    transition: .5s ease-in-out;
+    @apply flexCenter p-4 w-full border-b-2 border-zinc-600;
+  }
+}

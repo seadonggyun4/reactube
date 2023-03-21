@@ -1,0 +1,40 @@
+// 테일윈드 기본 CSS
+// 리셋기능 및 base로 지정되야할 CSS들이 스타일링 되어있다.
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+// bucket
+@import "bucket/flex";
+
+// module
+@import "module/body";
+@import "module/starwrappwer";
+@import "module/videoList";
+@import "module/searchHeader.scss";
+@import "module/aside";
+
+
+
+
+/* ScrollBar Custom */
+::-webkit-scrollbar{
+  width: 8px;
+  height: 8px;}
+
+::-webkit-scrollbar-thumb {
+  background: #b1b1b1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+
+
+#root{
+  max-width: 1950px;
+  @apply mx-auto w-full;
+}

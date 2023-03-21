@@ -1,0 +1,9 @@
+@layer components {
+  .bodyDark {
+    @apply bg-dark relative flex flex-col items-center text-gray-50 transition;
+  }
+
+  .bodyLight {
+    @apply bg-light relative flex flex-col items-center text-black transition;
+  }
+}

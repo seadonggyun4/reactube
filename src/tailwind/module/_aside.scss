@@ -1,0 +1,7 @@
+@layer components {
+  .relatedVideoList {
+    max-height: 1500px;
+
+    @apply overflow-y-scroll;
+  }
+}
