@@ -18,11 +18,12 @@ export default function Video({video}){
     return(
         <>
             <iframe
+                title="youtubeIframe"
                 id='player'
                 type='text/html'
                 width='100%'
                 height='640'
-                src={`http://www.youtube.com/embed/${video.id}`}
+                src={`https://www.youtube.com/embed/${video.id}`}
                 frameBorder='0'
             />
             <div className='p-8'>

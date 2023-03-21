@@ -13,5 +13,8 @@ export default function GlobalReducer(state, action){
 
             return returnData
         }
+        default: {
+            console.log(action.type + '이 액션타입은 존재하지 않는 액션 타입 입니다.')
+        }
     }
 }
