@@ -13,6 +13,8 @@ export default function Header(){
     const {common, dispatchCommon} = CommonStore()
     const { darkmode, searchBar}  = common
 
+    console.log("✨HEADER✨")
+
     return (
         <>
             {/*show Header*/}
