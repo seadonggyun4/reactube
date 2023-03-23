@@ -1,8 +1,8 @@
 import { atom } from "recoil";
 
 
-export const commonDATA = atom({
-    key: 'commonDATA',
+export const commonStore = atom({
+    key: 'commonStore',
     default: {
         darkmode: true,
         searchBar: true

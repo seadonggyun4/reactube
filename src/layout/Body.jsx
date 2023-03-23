@@ -1,11 +1,12 @@
 import {GlobalComponent} from "context/componentContext";
 import { useRecoilState } from "recoil";
-import { commonDATA } from "store/commonStore";
+import { commonStore } from "store/commonStore";
 
 export default function Body({children}){
     const {BackgroundEffect} = GlobalComponent()
-    const [ common ] = useRecoilState(commonDATA)
-    const { darkmode } = common
+    const [ isCommon ] = useRecoilState(commonStore)
+    const { darkmode } = isCommon
+
 
 
     return(

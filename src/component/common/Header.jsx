@@ -1,7 +1,7 @@
 import {GlobalComponent} from "context/componentContext";
 import { useRecoilState } from "recoil";
-import { commonDATA } from "store/commonStore";
-
+import { commonStore } from "store/commonStore";
+import { SET_NOT } from "Boiler/object-Boiler";
 
 export default function Header(){
     const {
@@ -12,19 +12,13 @@ export default function Header(){
         MdOutlineArrowDropUp,
         BsFillSunFill
     } = GlobalComponent()
-    const [ common, setCommon ] = useRecoilState(commonDATA)
-    const { darkmode, searchBar } = common
+    const [ isCommon, setIsCommon ] = useRecoilState(commonStore)
+    const { darkmode, searchBar } = isCommon
 
 
     const clickNotAction = (value) => {
-        setCommon(() => {
-            const returnData = {
-                ...common
-            }
-
-            returnData[value] = !returnData[value]
-
-            return returnData
+        setIsCommon(() => {
+            return  SET_NOT(isCommon, value)
         })
     }
 
@@ -39,7 +33,7 @@ export default function Header(){
                 <Logo/>
                 <SearchBar />
                 <button className="bg-primary mx-3 p-3 rounded-full transition hover:bg-blue-500" onClick={() => {clickNotAction('darkmode')}}>
-                    {darkmode ? <MdModeNight /> : <BsFillSunFill />}
+                    {darkmode ? <BsFillSunFill /> :  <MdModeNight />}
                 </button>
                 <button className="bg-primary mx-3 p-3 rounded-full transition hover:bg-blue-500" onClick={() => {clickNotAction('searchBar')}}>
                     {searchBar ? <MdOutlineArrowDropUp /> : <MdOutlineArrowDropDown />}
