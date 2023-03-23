@@ -14,6 +14,7 @@
 -  axios: ^1.3.4
 -  react-icons: ^1.0.0
 -  timeago.js: ^4.0.2
+-  recoil: ^0.7.7
 
 
 
@@ -22,10 +23,14 @@
 - tawind & scss 기반 스타일 처리
 - 글로벌 컴포넌트 등록
 - react-query 로 API통신된 데이터 상태관리
-- reducer로 global 상태관리 (구 방식)
+- recoil 로 UI 단 데이터 글로벌 상태관리
+
 
 
 ## context
-- commonContext : 공용 상태 관리Context
-- componentContext : 글로벌 Component 등록Context
+- componentContext : 글로벌 컴포넌트 관리Context
 - youtubeContext : YoutubeAPI 통신메서드Context
+
+## 리팩토링 된 것들
+- context로 global 상태관리 (구 방식)
+- 글로벌 스테이트 변경로직 reducer & immer (구 방식)
