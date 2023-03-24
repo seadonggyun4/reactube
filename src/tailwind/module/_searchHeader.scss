@@ -10,4 +10,9 @@
     transition: .5s ease-in-out;
     @apply flexCenter p-4 w-full border-b-2 border-zinc-600;
   }
+
+  .searchHeaderLight {
+    background: linear-gradient(to right,#4568dc,#b06ab3);
+    @apply text-white border-transparent
+  }
 }

@@ -1,4 +1,7 @@
 export default function ChannelInfo({imgURL, name}){
+    console.log("✨ChannelInfo✨")
+
+
     return(
         <div className="flex my-4 mb-8 items-center gap-3">
             {imgURL &&

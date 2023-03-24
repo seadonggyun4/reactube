@@ -1,4 +1,7 @@
 export default function BackgroundEffect({darkmode}){
+
+    console.log("✨BackgroundEffect✨")
+
     return(
         <div className={darkmode ? 'starWrapperDark' : 'starWrapperLight'}>
             <div className="stars1"></div>

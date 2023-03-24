@@ -4,6 +4,10 @@ export default function VideoCard({video, type, onClick}){
     const { title, thumbnails, channelTitle, publishedAt } = video.snippet;
     const isList = type === 'list'
 
+
+    console.log("✨VideoCard✨")
+
+
     return(
         <li onClick={onClick} className='cursor-pointer'>
             <article className={isList ? 'flex gap-1 m-2' : ''}>

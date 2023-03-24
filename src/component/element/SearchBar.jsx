@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import {GlobalComponent} from "context/componentContext";
 
+
 export default function SearchBar () {
     const { BsSearch } = GlobalComponent()
     const { keyword } = useParams();
@@ -17,6 +18,9 @@ export default function SearchBar () {
     
     //화면 이동시 input값 세팅
     useEffect(() => setText(keyword || ''), [keyword])
+
+    console.log("✨SearchBar✨")
+
 
     return (
         <form onSubmit={searchVideo} className="w-full flex justify-center">

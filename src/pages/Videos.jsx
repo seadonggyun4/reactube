@@ -3,7 +3,6 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import {YoutubeStore} from "context/YoutubeContext";
 import {GlobalComponent} from "context/componentContext";
 
-
 export default function Videos(){
     const {VideoCard} = GlobalComponent()
     const navigate = useNavigate()

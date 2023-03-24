@@ -15,6 +15,9 @@ export default function Video({video}){
         },{staleTime: 1000 * 60 * 5}
     )
 
+    console.log("✨Video✨")
+
+
     return(
         <>
             <iframe
