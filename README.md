@@ -34,7 +34,8 @@
 - youtubeContext : YoutubeAPI 통신메서드Context (구 방식)
 - 글로벌 스테이트 변경로직 reducer & immer (구 방식)
 
-### 리팩토링 사유
+## 리팩토링 사유
+![context사용 및 그냥 import](https://user-images.githubusercontent.com/84368302/227770253-c5b1d106-f84a-4606-a914-fa62e453672a.png)
 초기에 Context를 통해 컴포넌트와 API호출 함수를 관리하였다.
 테스트 결과 js Import 와 둘 간의 UI랜더링, 및 함수 실행에 차이점이 없어 
 좀더 직관적인 JS파일 모듈화를 통해 관리하기로 결정
