@@ -10,7 +10,7 @@ module.exports = {
                 'error': '#ef4444',
                 'success': '#4ade80',
                 'dark': '#212639',
-                'light': '#f1f3ef'
+                'light': '#f8f8f8'
             },
         },
     },

@@ -1,8 +1,8 @@
 import {Link} from "react-router-dom";
-import {GlobalComponent} from "context/componentContext";
+import GlobalComponents from 'GlobalComponents'
 
 export default function Logo(){
-    const { LogoIcon } = GlobalComponent()
+    const { LogoIcon } = GlobalComponents
 
     console.log("✨Logo✨")
 

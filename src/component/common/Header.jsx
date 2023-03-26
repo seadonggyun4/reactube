@@ -1,4 +1,4 @@
-import { GlobalComponent } from "context/componentContext";
+import GlobalComponents from 'GlobalComponents'
 import { useRecoilState } from "recoil";
 import { commonStore } from "store/commonStore";
 import { SET_NOT } from "Boiler/object-Boiler";
@@ -12,7 +12,7 @@ export default function Header(){
         MdOutlineArrowDropUp,
         BsFillSunFill,
         Button,
-    } = GlobalComponent()
+    } = GlobalComponents
     const [ isCommon, setIsCommon ] = useRecoilState(commonStore)
     const { darkmode, searchBar } = isCommon
 

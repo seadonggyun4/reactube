@@ -85,19 +85,6 @@
       box-shadow: $shadows-big;
     }
   }
-
-
-
-
-  //별 움직임 애니메이션
-  @keyframes animStar {
-    0%{
-      transform: translate3d(0, 0 ,0);
-    }
-    100%{
-      transform: translate3d(100px, -1000px ,0);
-    }
-  }
 }
 
 // LightMode
@@ -112,9 +99,9 @@
 
   //랜덤한 별 생성 함수
   @function multiple-box-shadow ($n){
-    $value: '#{random(2000)}px #{random(20000)}px #597aff';
+    $value: '#{random(2000)}px #{random(20000)}px #b06ab3';
     @for $i from 2 through $n{
-      $value: '#{$value} , #{random(2000)}px #{random(2000)}px #597aff';
+      $value: '#{$value} , #{random(2000)}px #{random(2000)}px #b06ab3';
     }
     @return unquote($value)
   }
@@ -188,17 +175,16 @@
       box-shadow: $shadows-big;
     }
   }
+}
 
 
 
-
-  //별 움직임 애니메이션
-  @keyframes animStar {
-    0%{
-      transform: translate3d(0, 0 ,0);
-    }
-    100%{
-      transform: translate3d(100px, -1000px ,0);
-    }
+//별 움직임 애니메이션
+@keyframes animStar {
+  0%{
+    transform: translate3d(0, 0 ,0);
+  }
+  100%{
+    transform: translate3d(100px, -1000px ,0);
   }
 }

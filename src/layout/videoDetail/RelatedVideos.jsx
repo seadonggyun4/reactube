@@ -1,14 +1,11 @@
 import {useNavigate} from "react-router-dom";
 import {useQuery} from "@tanstack/react-query";
-import {YoutubeStore} from "context/YoutubeContext";
-import {GlobalComponent} from "context/componentContext";
+import GlobalComponents from 'GlobalComponents'
+import youtubeAction from "action/youtubeAction";
 
 export default function RelatedVideos({id}){
-    const { VideoCard } = GlobalComponent()
+    const { VideoCard } = GlobalComponents
     const navigate = useNavigate()
-    const { youtube } = YoutubeStore()
-
-
 
     const {
         isLoading,
@@ -16,7 +13,7 @@ export default function RelatedVideos({id}){
         data: realatedVideo
     } = useQuery(['realatedVideo'], async () => {
             console.log('realatedVideo 패치.....')
-            return  await youtube.relatedVideo(id)
+            return  await youtubeAction.relatedVideo(id)
         },{staleTime: 1000 * 60 * 5}
     )
 

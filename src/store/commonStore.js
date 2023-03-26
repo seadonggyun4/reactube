@@ -1,12 +1,17 @@
 import { atom, selector } from "recoil";
 
 
+// 데이터 틀
+const DATA = {
+    darkmode: true,
+    searchBar: true
+};
+
+
+
 export const commonStore = atom({
     key: 'commonStore',
-    default: {
-        darkmode: true,
-        searchBar: true
-    }
+    default: DATA
 })
 
 //  [ selector ] ==============================================================================================================

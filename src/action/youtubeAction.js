@@ -1,4 +1,7 @@
-export default class Youtube {
+import youtubeAPI from "api/youtubeAPI";
+
+
+class YoutubeAction {
     // apiClient 받기
     constructor(apiClient) {
         this.apiClient = apiClient
@@ -29,7 +32,7 @@ export default class Youtube {
     
     // 가장 인기있는 검색
     async #mostPopular(){
-        return this.apiClient
+       const {data} = await this.apiClient
             .videos({
                 params: {
                     part:'snippet',
@@ -37,7 +40,8 @@ export default class Youtube {
                     chart: 'mostPopular'
                 }
             })
-            .then((res) => res.data.items)
+
+            return data.items
     }
 
 
@@ -66,7 +70,9 @@ export default class Youtube {
             })
             .then((res) => res.data.items.map(item => ({...item, id: item.id.videoId})))
     }
-
-
-
 }
+
+const youtubeAPIClient = new youtubeAPI()
+const youtubeAction = new YoutubeAction(youtubeAPIClient)
+
+export default youtubeAction

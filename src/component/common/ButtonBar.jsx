@@ -1,10 +1,10 @@
 import {useRecoilState, useRecoilValue} from "recoil";
 import {commonStore, darkModeInfo, searchBarInfo} from "store/commonStore";
 import {SET_NOT} from "Boiler/object-Boiler";
-import {GlobalComponent} from "context/componentContext";
+import GlobalComponents from 'GlobalComponents'
 
 export default function ButtonBar () {
-    const { Button } = GlobalComponent()
+    const { Button } = GlobalComponents
     const [ isCommon, setIsCommon ] = useRecoilState(commonStore)
     const { searchBar } = isCommon
     const darkModeInfoValue = useRecoilValue(darkModeInfo);

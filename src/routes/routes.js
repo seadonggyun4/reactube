@@ -1,8 +1,7 @@
 import {createBrowserRouter} from "react-router-dom";
-import Root from 'pages/Root'
-import NotFound from "pages/NotFound";
-import Videos from "pages/Videos";
-import VideoDetail from "pages/VideoDetail";
+import GlobalComponents from 'GlobalComponents'
+const { Root, NotFound, Videos, VideoDetail } = GlobalComponents
+
 
  const router = createBrowserRouter([
     {

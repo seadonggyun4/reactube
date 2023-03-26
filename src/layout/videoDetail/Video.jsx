@@ -1,17 +1,17 @@
 import {useQuery} from "@tanstack/react-query";
-import {YoutubeStore} from "context/YoutubeContext";
-import {GlobalComponent} from "context/componentContext";
+import GlobalComponents from 'GlobalComponents'
+
+import youtubeAction from "action/youtubeAction";
 
 export default function Video({video}){
-    const { ChannelInfo } = GlobalComponent()
-    const { youtube } = YoutubeStore()
+    const { ChannelInfo } = GlobalComponents
     const { title, channelId, channelTitle, description } = video.snippet
 
     const {
         data: imgURL
     } = useQuery(['channels'], async () => {
             console.log('channels 패치.....')
-            return  await youtube.channelImageURL(channelId)
+            return  await youtubeAction.channelImageURL(channelId)
         },{staleTime: 1000 * 60 * 5}
     )
 

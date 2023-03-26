@@ -1,14 +1,19 @@
 import {useNavigate, useParams} from "react-router-dom";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import {YoutubeStore} from "context/YoutubeContext";
-import {GlobalComponent} from "context/componentContext";
+import GlobalComponents from 'GlobalComponents'
+import youtubeAction from "action/youtubeAction";
+
+// import {useMemo} from "react";
+// import { useRecoilState } from "recoil";
+// import { YoutubeStore } from "store/youtubeStore";
+
 
 export default function Videos(){
-    const {VideoCard} = GlobalComponent()
+    const {VideoCard} = GlobalComponents
     const navigate = useNavigate()
     const client = useQueryClient()
     const { keyword } = useParams()
-    const { youtube } = YoutubeStore()
+    // const [ isYoutube, setIsYoutube ] = useRecoilState(YoutubeStore)
 
 
     const {
@@ -17,7 +22,8 @@ export default function Videos(){
         data: videos
     } = useQuery(['videos', keyword], async () => {
             console.log('videos 패치.....')
-            return  youtube.search(keyword)
+            return  await youtubeAction.search(keyword)
+
         },{staleTime: 1000 * 60 * 1}
     )
 
@@ -26,6 +32,20 @@ export default function Videos(){
         navigate(`/videos/watch/${video.id}`, { state: {video} })
         client.invalidateQueries(['channels']) // channels 쿼리 초기화
     }
+
+    // useMemo(() => {
+    //     console.log('실행')
+    //     if(videos){
+    //         if(videos[0]?.id !== isYoutube[0]?.id){
+    //             setIsYoutube([...videos])
+    //             console.log('다름')
+    //         } else if (videos[0]?.id === isYoutube[0]?.id){
+    //             console.log('같음')
+    //         }
+    //     }
+    // }, [videos]);
+
+
 
     return (
         <section>

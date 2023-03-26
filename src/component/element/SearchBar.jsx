@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import {GlobalComponent} from "context/componentContext";
+import GlobalComponents from 'GlobalComponents'
 
 
 export default function SearchBar () {
-    const { BsSearch } = GlobalComponent()
+    const { BsSearch } = GlobalComponents
     const { keyword } = useParams();
     const navigate = useNavigate();
     const [text, setText] = useState('');

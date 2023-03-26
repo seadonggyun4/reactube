@@ -1,10 +1,10 @@
 import {useLocation} from "react-router-dom";
-import {GlobalComponent} from "context/componentContext";
+import GlobalComponents from 'GlobalComponents'
 
 
 export default function VideoDetail () {
     const {state: {video}} = useLocation()// state는 새로고침되도 남아있는거 같음???
-    const {Video, RelatedVideos} = GlobalComponent()
+    const {Video, RelatedVideos} = GlobalComponents
 
     return (
         <section className='flex flex-col lg:flex-row'>

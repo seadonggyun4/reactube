@@ -22,15 +22,19 @@
 - jsconfig.json: 절대경로 src로 설정
 - tawind & scss 기반 스타일 처리
 - 글로벌 컴포넌트 등록
-- react-query 로 API통신된 데이터 상태관리
+- Boiler 디렉토리에 데이터를 다루는 보일러 플레이트 코드 모듈화
+- api 디렉토리에 api통신 모듈화
+- action 디렉토리에 API통신 함수 모듈화
+- react-query 로 API통신 관리   
 - recoil 로 UI 단 데이터 글로벌 상태관리
 
 
-
-## context
-- componentContext : 글로벌 컴포넌트 관리Context
-- youtubeContext : YoutubeAPI 통신메서드Context
-
 ## 리팩토링 된 것들
-- context로 global 상태관리 (구 방식)
+- componentContext : 글로벌 컴포넌트 관리Context (구 방식)
+- youtubeContext : YoutubeAPI 통신메서드Context (구 방식)
 - 글로벌 스테이트 변경로직 reducer & immer (구 방식)
+
+### 리팩토링 사유
+초기에 Context를 통해 컴포넌트와 API호출 함수를 관리하였다.
+테스트 결과 js Import 와 둘 간의 UI랜더링, 및 함수 실행에 차이점이 없어 
+좀더 직관적인 JS파일 모듈화를 통해 관리하기로 결정
