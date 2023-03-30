@@ -3,7 +3,13 @@
 유튜브 오픈API 사용
 <br/>
 
-## library
+## ⚒️Tech
+- 리코일 : UI데이터 상태관리
+- 리액트 쿼리: API통신 모듈 및 데이터 상태관리
+- 테일윈드: CSS 스타일관리
+<br/>
+
+## package
 -  react-router-dom: ^6.8.2
 -  @tanstack/react-query: ^4.26.1
 -  tailwindcss: ^3.2.7
