@@ -17,7 +17,6 @@ const { Root, NotFound, Videos, VideoDetail } = GlobalComponents
             {path: '/videos/watch/:videoId', element: <VideoDetail />},
             // [ 404페이지 ]
             {path: '*', element: <NotFound />},
-
         ]
     }
 ])
