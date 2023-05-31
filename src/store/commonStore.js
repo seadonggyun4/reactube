@@ -4,7 +4,8 @@ import { atom, selector } from "recoil";
 // 데이터 틀
 const DATA = {
     darkmode: true,
-    searchBar: true
+    searchBar: true,
+    videoId: '',
 };
 
 

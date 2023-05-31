@@ -5,7 +5,7 @@ import ButtonBar from "component/common/ButtonBar";
 const CommonComponent = {
     BackgroundEffect,
     Header,
-    ButtonBar
+    ButtonBar,
 }
 
 export default  CommonComponent
